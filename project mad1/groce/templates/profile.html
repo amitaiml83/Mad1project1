@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+            
+        }
+        .profiles {
+            margin: auto;
+            max-width: 1300px;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .dashBoard a{
+            text-decoration: none;
+            color: black;
+        }
+        .profile {
+            margin: auto;
+            
+            
+        }
+        .profileForm {
+            text-align: left;
+            margin: auto;
+            width: 400px;
+            border: 1px solid black;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class = "profiles">
+    <div class="header">
+        <div>
+        {{username}}
+    </div>
+    <div class = "dashBoard">      
+        <a href="/user_dashboard" type="button" style="margin-left: 125px;"> Home|</a>
+        <a href="/userlogout" type="button"> Logout</a>
+    </div>
+    </div><br>
+    <div class = "profile">
+        <form action="/profile" method="POST" id="update-form" class="profileForm">
+            <h1>Update the Profile</h1>
+            <div>
+                <label>First Name :</label>
+                <input type="text" name="f_name"  value="{{user.first_name}}" required/>
+            </div>
+            <div>
+                <label>Last Name :</label>
+                <input type="text" name="l_name" value=" {{user.last_name}}"/>
+            </div>
+            <div>
+                <label>Mobile Number :</label>
+                <input type="tel" name="mobile_number" value="{{user.mobile_number}}" required/>
+            </div>
+            <div>
+                <label>Email id :</label>
+                <input type="email" name="Email" value="{{user.Email_id}}" required/>
+            </div><br>
+            <div>
+                <label>User Name :</label>
+                <input type="text" name="u_name"  value="{{user.user_name}}" required>
+            </div><br>
+            <div>
+                <label >Password :</label>
+                <input type="password" name="password" value="{{user.password}}" required>
+            </div><br>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite; 
+        }
+        .header{
+            border: 1px solid black;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .header a {
+            margin-left: 20px;
+            text-decoration: none;
+            color:black ;
+        }
+        .create {
+            border: 1px solid black;
+            margin-top:20px;
+            padding: 20px;
+        }
+        .submit {
+            margin-top: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+        {{m_name}}
+    </div>
+    <div>
+        <a href="/summary">Summary</a>
+        <a href="/managerlogout">Logout</a>
+    </div>
+    </div>
+    <div class = "create">
+    <form action="/addcategory", method = 'POST' id="create_category">
+        <div>
+            <h3>Creating a new category
+            </h3>
+        </div>
+        <div>
+            <label>Category Name</label>
+            <input type="text" name="c_n" />
+        </div>
+        <div class = "submit">
+            <input type="submit" value="Save" />
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserDashboard</title>
+    <style>
+        body{
+            background-color: antiquewhite; 
+        }
+        .userHome {
+            max-width: 1300px;
+            margin: auto;
+        }
+        .header{
+            border: 1px solid black;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .profile {
+            word-spacing: 20px;
+        }
+        .profile a {
+            text-decoration: none;
+            color: black;
+        }
+        .items {
+            display: flex;
+            
+        }
+        .item {
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+        .item_rate {
+            display: flex;
+        }
+        .item p {
+            font-size: 18px;
+            margin-left: 20px;
+        }
+        .item a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="userHome">
+    <div class="header">
+        <div>
+        <b> Welcome {{ username }}</b>
+    </div>
+        <div class = "profile">
+        <a href="/profile" type="button">Profile</a>
+        <a href="/cart" type="button" >Cart</a>
+        <a href="/userlogout" type="button" >Logout</a>
+    </div>
+    </div><br>
+    <div class="cart">
+        <div>
+            {% for category_r in category %}
+            <h2>{{category_r.c_name}}</h2><br>
+        <div class= "items">  
+        {% for product in category_r.products %}
+        
+        <div class = "item">
+            <div class = "item_rate">
+            <h3>{{product.p_name}}</h2>
+             <p>{{product.rate}}
+             {{product.unit}}</p>
+            </div>
+            <div>
+            {% if product.quantity !=0 %}
+                <a href="/buy/{{product.p_id}}/b" type="button">Buy</a>
+                <a href="/cart/{{product.p_id}}/c" type="submit">cart</a>
+            {% else %}
+                out of stock!
+            {% endif %}
+        </div>
+              </div>
+        {% endfor %}
+  
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

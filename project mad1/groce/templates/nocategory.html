@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite; 
+        }
+
+        .header{
+            border: 1px solid black;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .profile {
+            word-spacing: 20px;
+        }
+        .profile a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+        {{m_name}}
+    </div>
+    <div class = "profile">
+        <a href="/summarypage" >Summary </a>
+        <a href="/managerlogout" >logout</a>
+    </div>
+    </div><br>
+    <div>
+        <h4>No categories or products created</h4>
+    </div>
+    <a href="/addcategory" type="button" style="margin-left:125px;">+aad category</a>
+</body>
+</html>

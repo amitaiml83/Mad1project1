@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Details</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+            
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            border: 1px solid black;
+        }
+        .header a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: black; 
+        }
+        .cart {
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .cart ul{
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        .cart li {
+            list-style: none;
+            
+        }
+        .grandTotal {
+            display: flex;
+            justify-content: right;
+            margin-top: 10px;
+            margin-right:20px ;
+        }
+        .cartButton a {
+            text-decoration: none;
+            color: black;
+            border: 1px solid black;
+            padding: 5px 20px;
+            border-radius: 10px;
+        }
+        .grandTotal a {
+            text-decoration: none;
+            color: black;
+            border: 1px solid black;
+            padding: 5px 20px;
+            border-radius: 10px;
+        }
+        .total {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "header">
+        <div>
+        {{username}}
+        </div>
+        <div>
+        <a href="/profile" type="button" style="margin-left: 250px;">Profile </a>
+        <a href="/user_dashboard" type="button"> Home</a>
+        <a href="/userlogout" type="button"> Logout</a>
+    </div>
+    </div><br>
+    <div class="cart">
+        {% if  not carts %}
+        No product cart till now
+        {% else %}
+        
+        {% for cart in carts %}
+        <ul>
+        <li>
+        {{cart.productn}}
+    </li>
+    <li>
+        {{cart.categoryn}}
+    </li>
+    <li>
+        {{cart.cart_quntity}}
+    </li>
+    <li>
+        {{cart.cart_price}}
+    </li>
+    <li class="cartButton">
+        <a href="/cart/{{ cart.cart_id }}/delete" type="button">Remove</a>
+    </li>
+</ul>
+        {% endfor %}
+        {% endif %} 
+    </div>
+    
+    <div class="grandTotal">
+        <span class="total">Grand Total : {{total}} ₹ </span>
+        <a href="/buy" type="button" style="margin-left: 125px;">Buy All</a>
+    </div>
+</body>
+</html>

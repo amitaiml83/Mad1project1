@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+            padding: 10px;
+        }
+        .header{
+            border: 1px solid black;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .profile a {
+            text-decoration: none;
+            color: black;
+            margin-left: 20px;
+        }
+        .products {
+            border: 1px solid black;
+            margin-bottom: 10px;  
+        }
+        .product {
+            display: flex;
+            justify-content: space-between;
+            padding:20px;  
+            
+        }
+        .product a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .add a {
+            text-decoration: none;
+            border: 1px solid black;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="header">
+            <div>
+            {{m_name}}
+        </div>
+        <div class="profile">
+            <a href="/summary" >Summary </a>
+            <a href="/logout">logout</a>
+        </div>
+    </nav>
+    <div>
+    {% for category_r in category %}
+    <h2>{{category_r.c_name}}</h2>
+    {% if category_r.products|length == 0 %}
+       <h3> no products created </h3>
+    {% else %}
+    <div class = "products">
+    {% for product in category_r.products %}
+        <div class = "product">
+        {{product.p_name}}
+        <a href="/product/{{product.p_id}}/update" type="button">Update</a>
+        <a href="/product/{{product.p_id}}/delete" type="button">Delete</a>
+    </div>
+    {% endfor %}
+    </div>
+    {% endif %}
+    <div class = "product">
+    <a href="/addproduct" type="button">+add product</a>
+    <a href="/category/{{category_r.c_id}}/edit" type="button">category update</a>
+    <a href="/category/{{category_r.c_id}}/delete" type="button">category Delete</a>
+</div>
+    {% endfor %}
+    </div>
+    <div class="add" style="margin-top: 20px; margin-bottom: 40px; text-align: center">
+    <a href="/addcategory" type="button" >+Add Category</a>
+</div>
+     
+</body>
+</html>

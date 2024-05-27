@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>summary</title>
+    <style>
+        body{
+            background-color: antiquewhite; 
+        }
+        .header{
+            border: 1px solid black;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .profile {
+            word-spacing: 20px;
+        }
+        .profile a {
+            text-decoration: none;
+            color: black;
+        }
+        .image {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+        Summary
+    </div>
+    <div class = "profile">
+        <a href="/managerhome" type="button">Home</a>
+        <a href="/logout" type="button"> Logout</a>
+    </div>
+    </div>
+    <div class = "image">
+    <form action="/summary" method="GET">
+        categories-Wise products<br>
+        <img src="{{url_for('static',filename = 'my_plot.png')}}" alt="bargraph">
+    </form>
+</div>
+</body>
+</html>

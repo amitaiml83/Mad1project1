@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        body{
+            background-color: antiquewhite; 
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+        .profile {
+            word-spacing: 20px;
+        }
+        .profile a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <form action="/buy/{{product.p_id}}/b", method='POST'>
+        <div class="header">
+            <div>
+            {{user_name}}
+        </div>
+        <div class="profile">
+            <a href="/profile" type="button" style="margin-left: 125px;"> Profile</a>
+            <a href="/cart" type="submit">cart</a>
+            <a href="/logout" type="button"> logout</a>
+        </div>
+        </div><br>
+        <div>
+            {{product.p_name}}
+            -
+            {{product.category.c_name}}
+        </div> <br>
+        <div>
+            Availability: In stock
+        </div><br>
+        <label for="q_t">Quantity:</label>
+        <input type="integer" name="q_n" id="q_t"><br>
+        <label for="p">Price:</label>
+        <input type="integer" name="price" id="p" value="{{product.rate}}">
+        {{product.unit}}<br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

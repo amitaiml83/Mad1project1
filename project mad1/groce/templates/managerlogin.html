@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOgin page</title>
+    <style>
+        body{
+            background-color: antiquewhite; 
+        }
+        #header{
+            text-align: center;
+            margin-top: 125px;
+        }
+
+        #manager_form{
+            text-align: center;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Admin login portal</h1>
+    </div>
+    <form action="/managerlogin" method="POST" id = 'manager_form' style="padding: 15pxS;">
+        <div>
+        <label>User Name</label>
+        <input type="text" name = user_name />
+        </div><br>
+        <div>
+            <label>Password</label>
+            <input type="password" name="password" />
+        </div><br>
+        <input type="submit" value="login">
+        <h2>{{message}}</h2>
+    </form>
+</body>
+</html>

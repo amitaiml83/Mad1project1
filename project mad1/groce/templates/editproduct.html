@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: antiquewhite;
+            
+        }
+        .header{
+            border: 1px solid black;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .profile a {
+            text-decoration: none;
+            color: black;
+            margin-left: 20px;
+        }
+        .update {
+            border: 1px solid black;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .update_product{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action='/product/{{product.p_id}}/update' method="POST">
+        <div class = "header">
+            <div>
+            {{m_name}}
+        </div>
+        <div class = "profile">
+            <a href="/summary">Summary</a>
+            <a href="/logout">Logout</a>
+        </div>
+        </div>
+        <div class = "update">
+        <h3>Update the Product</h1>
+        <div class="update_product">
+            <label for="p_name">Product Name:</label>
+            <input type="text" name="product_name" id="p_name" value="{{product.p_name}}">
+        </div>
+        <div class="update_product">
+            <label for="u_name">Unit:</label>
+            <select name="u_nit" id="u_name">
+                <option >Rs/kg</option>
+                <option >Rs/litre</option>
+                <option >Rs/gram</option>
+                <option >Rs/dozen</option>
+            </select>
+        </div>
+        <div class="update_product">
+            <label for="rate_p_u">Rate/unit:</label>
+            <input type="text" name="rate_per_unit" id="rate_p_u" value="{{product.rate}}">
+        </div>
+        <div class="update_product">
+            <label for="q_nty">Quantity:</label>
+            <input type="text" name="q" id="q_nty" value="{{product.quantity}}">
+        </div>
+        <div class="update_product">
+            <label for="cup">Category Name:</label>
+            <select name="cup" id="cup">
+                {% for cup in categoryes %}
+                    <option value="{{cup.c_id}}">{{cup.c_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <input type="submit" value="Save">
+    </form>
+</div>
+</body>
+</html>

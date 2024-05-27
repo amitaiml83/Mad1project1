@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=fo, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: antiquewhite; 
+        }
+        .header{
+            border: 1px solid black;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .profile {
+            word-spacing: 20px;
+        }
+        .profile a {
+            text-decoration: none;
+            color: black;
+        }
+        .newProducts {
+            border: 1px solid black;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .newProduct {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/addproduct" method="POST">
+        <div class = "header">
+            <div>
+            {{m_name}}
+        </div>
+            <div class="profile">
+            <a href="/summary">Summary</a>
+            <a href="/managerlogout" >Logout</a>
+        </div>
+        </div>
+        <div class="newProducts">
+        <h2>Creating a new Product</h2>
+        <div class="newProduct">
+            <label for="p_name">Product Name:</label>
+            <input type="text" name="product_name" id="p_name">
+        </div>
+        <div class="newProduct">
+            <label for="u_name">unit:</label>
+            <select name="u_nit" id="u_name">
+                <option >Rs/kg</option>
+                <option >Rs/litre</option>
+                <option >Rs/gram</option>
+                <option >Rs/dozen</option>
+            </select>
+        </div>
+        <div class="newProduct">
+            <label for="rate_p_u">rate/unit:</label>
+            <input type="text" name="rate_per_unit" id="rate_p_u">
+        </div>
+        <div class="newProduct">
+            <label for="q_nty">Quantity:</label>
+            <input type="text" name="q" id="q_nty">
+        </div>
+        <div class="newProduct">
+            <label for="cup">category_name:</label>
+            <select name="cup" id="cup">
+                {% for cup in categoryes %}
+                    <option value="{{cup.c_id}}">{{cup.c_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <input type="submit" value="Save">
+    </form>
+</div>
+</body>
+</html>

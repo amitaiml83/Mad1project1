@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>userloginform</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        .login {
+            
+            max-width: 20rem;
+            margin: auto;
+            margin-top: 5rem;
+            border: 1px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+    <h1>User Login Portal</h1>
+    <form action="/" method = "POST", id="login-user for">
+        <div>
+            <label>User Name</label>
+            <input type="text" name = u_name />
+        </div><br>
+        <div>
+            <label>Password</label>
+            <input type="password" name="p_word" />
+        </div><br>
+        <input type="submit" value="login">
+        <a href="/register" style="margin-left: 125px;">Register</a>
+    </form>
+    {{message}}
+</div>
+</body>
+</html>
