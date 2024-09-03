@@ -37,7 +37,7 @@ The project uses the MVC (Model-View-Controller) architecture:
   - Admin-specific functionalities including Admin Login and Dashboard.
   - Admin capabilities to manage Categories and Products.
   - Data visualization using Matplotlib for enhanced analytics.
-  - 
+    
 # Additional Features (Potential Enhancements)
 - Order history
 - User profile management
