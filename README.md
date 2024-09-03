@@ -13,7 +13,7 @@ The system also includes an admin panel for managing products, sections, and use
 
 **Developed the backend infrastructure for a robust web application catering to a Grocery Store environment. Utilized Python Flask framework coupled with Flask-SQL Alchemy for efficient database interaction and data integrity assurance. Integrated Flask-Login for user authentication, authorization, and session management. Designed responsive frontend interfaces using HTML/CSS for enhanced user experience.**
 
-#  Technologies Used:**
+#  Technologies Used:
 - Flask: A simple and extensible micro web framework in Python.
 - Jinja2: A templating engine for generating dynamic HTML content.
 - SQLAlchemy: An ORM library for database management.
@@ -28,15 +28,16 @@ The project uses the MVC (Model-View-Controller) architecture:
   - Models: Represent the database tables.
 
 # Key Features:
-  1. Home Page showcasing products and categories.
-  2. User Registration with registration form.
-  3. User Login and Logout functionalities.
-  4. Cart management including 'Add to Cart' and 'Buy' options.
-  5. User Profile management for editing user details.
-  6. Order Confirmation message display.
-  7. Admin-specific functionalities including Admin Login and Dashboard.
-  8. Admin capabilities to manage Categories and Products.
-  9. Data visualization using Matplotlib for enhanced analytics.
+  - Home Page showcasing products and categories.
+  - User Registration with registration form.
+  - User Login and Logout functionalities.
+  - Cart management including 'Add to Cart' and 'Buy' options.
+  - User Profile management for editing user details.
+  - Order Confirmation message display.
+  - Admin-specific functionalities including Admin Login and Dashboard.
+  - Admin capabilities to manage Categories and Products.
+  - Data visualization using Matplotlib for enhanced analytics.
+  - 
 # Additional Features (Potential Enhancements)
 - Order history
 - User profile management
